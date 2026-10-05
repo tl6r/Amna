@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sprout & Crumb | مخبز</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Fraunces:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf3e4;--bg2:#f4e6cc;--card:#fffaf0;--ink:#33281c;--mute:#7a6a55;--green:#52743a;--green2:#dfe9cf;--crust:#d27c2a;--rose:#f3c9b5;--line:#ead9b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1e1912;--bg2:#2a2318;--card:#2b241a;--ink:#f6ecd9;--mute:#bcae94;--green:#a3c680;--green2:#33402a;--crust:#eaa14f;--rose:#4a3328;--line:#413726}}
+:root[data-theme="dark"]{--bg:#1e1912;--bg2:#2a2318;--card:#2b241a;--ink:#f6ecd9;--mute:#bcae94;--green:#a3c680;--green2:#33402a;--crust:#eaa14f;--rose:#4a3328;--line:#413726}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;line-height:1.8;overflow-x:hidden}
+.brand{font-family:Fraunces,Georgia,serif;font-style:italic}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .brand{font-size:1.35rem;color:var(--green);font-weight:700}
+nav a{color:var(--ink);text-decoration:none;margin-inline-start:14px;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--crust)}
+.hero{position:relative;text-align:center;padding:64px 20px 90px;background:radial-gradient(circle at 20% 20%,var(--rose),transparent 45%),radial-gradient(circle at 85% 70%,var(--green2),transparent 45%),var(--bg);overflow:hidden}
+.hero .tag{display:inline-block;background:var(--card);border:1px solid var(--line);padding:4px 16px;border-radius:999px;font-weight:600;color:var(--green);margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,9vw,4.4rem);margin:0;line-height:1.15;color:var(--ink)}
+.hero h1 span{color:var(--crust)}
+.hero p{color:var(--mute);max-width:480px;margin:14px auto 26px;font-size:1.05rem}
+.btn{display:inline-block;background:var(--crust);color:#fff;border:0;padding:13px 30px;border-radius:999px;font:700 1rem Cairo,sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 6px 0 color-mix(in srgb,var(--crust) 60%,#000);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 color-mix(in srgb,var(--crust) 60%,#000)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:2px solid var(--ink);margin-inline-start:10px}
+.fl{position:absolute;font-size:2.4rem;opacity:.9;animation:float 6s ease-in-out infinite;user-select:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(6deg)}}
+.steam{position:absolute;bottom:0;left:0;width:100%;height:60px}
+.marq{background:var(--green);color:#fff;overflow:hidden;white-space:nowrap;padding:8px 0;font-weight:700}
+.marq div{display:inline-block;animation:mq 28s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+section{max-width:980px;margin:0 auto;padding:54px 20px}
+h2{font-size:1.9rem;margin:0 0 6px;color:var(--ink)}
+h2::after{content:"";display:block;width:56px;height:5px;border-radius:5px;background:var(--crust);margin-top:6px}
+.sub{color:var(--mute);margin:0 0 22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tabs button{border:2px solid var(--line);background:var(--card);color:var(--ink);padding:6px 18px;border-radius:999px;font:600 .95rem Cairo,sans-serif;cursor:pointer}
+.tabs button.on{background:var(--green);border-color:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 14px 28px rgba(80,50,10,.15)}
+.pic{height:120px;display:grid;place-items:center;font-size:4rem;position:relative}
+.pic b{position:absolute;top:10px;inset-inline-start:10px;background:var(--card);font-size:.75rem;padding:1px 10px;border-radius:999px;color:var(--crust)}
+.card .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{margin:0;font-size:1.1rem}
+.card p{margin:0;color:var(--mute);font-size:.9rem;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.price{font-weight:800;color:var(--crust);font-size:1.1rem}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:34px;height:34px;border-radius:50%;border:0;background:var(--green);color:#fff;font-size:1.2rem;cursor:pointer;transition:transform .15s}
+.qty button.m{background:var(--bg2);color:var(--ink)}
+.qty button:active{transform:scale(.85)}
+.qty b{min-width:18px;text-align:center}
+.storyw{background:var(--bg2);border-radius:36px;max-width:980px;margin:0 auto}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+@media(max-width:700px){.sgrid{grid-template-columns:1fr}}
+.sgrid p{margin:0 0 12px}
+.big{font-size:7rem;text-align:center;animation:float 7s ease-in-out infinite}
+.stats{display:flex;gap:10px;margin-top:14px}
+.stats div{flex:1;background:var(--card);border-radius:16px;text-align:center;padding:10px 4px;border:1px solid var(--line)}
+.stats b{display:block;font-size:1.5rem;color:var(--crust)}
+.stats small{color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+.steps div{background:var(--green2);border-radius:16px;padding:12px;text-align:center;font-weight:600}
+.steps span{display:block;font-size:1.8rem}
+form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;display:grid;gap:12px}
+label{display:grid;gap:4px;font-weight:600;font-size:.92rem}
+input,textarea{font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--crust)}
+#summary{background:var(--bg);border:2px dashed var(--line);border-radius:14px;padding:12px 16px;color:var(--mute);white-space:pre-line}
+#msg{margin-top:14px;padding:16px;border-radius:16px;background:var(--green2);display:none;white-space:pre-line}
+footer{text-align:center;color:var(--mute);padding:40px 20px 110px;background:var(--bg2);margin-top:40px}
+footer .brand{font-size:1.6rem;color:var(--green)}
+#bar{position:fixed;inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--ink);color:var(--bg);border-radius:999px;padding:10px 12px 10px 20px;display:flex;justify-content:space-between;align-items:center;transform:translateY(140%);transition:transform .35s cubic-bezier(.3,1.4,.5,1);max-width:520px;margin-inline:auto;text-decoration:none;font-weight:700}
+#bar.on{transform:none}
+#bar span{background:var(--crust);color:#fff;border-radius:999px;padding:4px 16px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">Sprout &amp; Crumb</span>
+  <nav><a href="#menu">القائمة</a><a href="#story">قصتنا</a><a href="#order">اطلب</a></nav>
+</header>
+
+<div class="hero">
+  <span class="fl" style="top:12%;right:8%">🌾</span><span class="fl" style="top:58%;right:4%;animation-delay:-2s">🥐</span>
+  <span class="fl" style="top:16%;left:7%;animation-delay:-1s">🍞</span><span class="fl" style="top:62%;left:10%;animation-delay:-3s">🌱</span>
+  <span class="tag">🔥 يُخبز طازجاً كل صباح</span>
+  <h1 class="brand">Sprout <span>&amp;</span> Crumb</h1>
+  <p>عجين مخمّر ببطء، وزبدة حقيقية، ورائحة فرن تسبقك إلى الباب. احجز مخبوزاتك مسبقاً وتسلّمها دافئة.</p>
+  <a class="btn" href="#menu">تصفح القائمة</a><a class="btn ghost" href="#story">قصتنا</a>
+  <svg class="steam" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V60 H0Z" fill="var(--bg)"/></svg>
+</div>
+
+<div class="marq"><div>🥖 عجين مخمّر 24 ساعة &nbsp;·&nbsp; 🧈 زبدة طبيعية &nbsp;·&nbsp; 🌾 حبوب كاملة &nbsp;·&nbsp; 🍋 مكونات طازجة &nbsp;·&nbsp; 🥐 دفعات صغيرة كل صباح &nbsp;·&nbsp; 🥖 عجين مخمّر 24 ساعة &nbsp;·&nbsp; 🧈 زبدة طبيعية &nbsp;·&nbsp; 🌾 حبوب كاملة &nbsp;·&nbsp; 🍋 مكونات طازجة &nbsp;·&nbsp; 🥐 دفعات صغيرة كل صباح &nbsp;·&nbsp;</div></div>
+
+<section id="menu" class="rv">
+  <h2>قائمة المنتجات</h2>
+  <p class="sub">اختر ما يعجبك وأضفه إلى طلبك.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="products"></div>
+</section>
+
+<div class="storyw rv" id="story"><section>
+  <h2>قصتنا</h2>
+  <div class="sgrid">
+    <div>
+      <p>بدأت Sprout &amp; Crumb من حلم بسيط: مخبز صغير يصنع خبزاً حقيقياً، بمكونات نعرف مصدرها ووقت يكفي ليأخذ العجين حقه.</p>
+      <p><strong>Sprout</strong> هي البذرة التي نبدأ منها، و<strong>Crumb</strong> هي لقمة الدفء التي نتمنى أن تصلك. كل صباح نخبز دفعات صغيرة لتصل طازجة.</p>
+      <p style="color:var(--mute);font-size:.85rem">(نص مبدئي، أرسل لي قصتك الحقيقية وأستبدله بها.)</p>
+      <div class="stats"><div><b>24</b><small>ساعة تخمير</small></div><div><b>100%</b><small>طازج</small></div><div><b>6+</b><small>أصناف يومياً</small></div></div>
+    </div>
+    <div class="big">🥖🌱</div>
+  </div>
+</section></div>
+
+<section id="order" class="rv">
+  <h2>الطلب المسبق</h2>
+  <p class="sub">ثلاث خطوات بسيطة.</p>
+  <div class="steps"><div><span>🛒</span>اختر منتجاتك</div><div><span>📝</span>املأ بياناتك</div><div><span>🥐</span>تسلّم طلبك دافئاً</div></div>
+  <form id="f">
+    <div id="summary">اختر منتجات من القائمة لتظهر هنا.</div>
+    <label>الاسم<input name="name" required></label>
+    <label>رقم الجوال<input name="phone" type="tel" inputmode="tel" required></label>
+    <label>تاريخ الاستلام<input name="date" type="date" required></label>
+    <label>ملاحظات (اختياري)<textarea name="notes" rows="2"></textarea></label>
+    <button class="btn" type="submit">إرسال الطلب</button>
+  </form>
+  <div id="msg"></div>
+</section>
+
+<footer>
+  <div class="brand">Sprout &amp; Crumb</div>
+  <div>🌾 خبز بحب، كل يوم 🌾</div>
+  <div>أضف هنا العنوان وساعات العمل ووسائل التواصل</div>
+</footer>
+
+<a id="bar" href="#order"><span id="bc">0</span><em style="font-style:normal">أكمل الطلب ←</em><b id="bt">0 ر.س</b></a>
+
+<script>
+const P=[
+ {id:"sour",c:"خبز",e:"🍞",bg:"#f6d9a8",n:"خبز العجين المخمّر",d:"قشرة مقرمشة وداخل طري، مخمّر 24 ساعة.",p:22,t:"الأكثر طلباً"},
+ {id:"zaat",c:"خبز",e:"🥖",bg:"#e8d3a6",n:"فطيرة الزعتر",d:"زعتر وزيت زيتون على عجين طازج.",p:7},
+ {id:"croi",c:"معجنات",e:"🥐",bg:"#f7cfa0",n:"كرواسان بالزبدة",d:"طبقات ذهبية هشة بالزبدة الطبيعية.",p:12,t:"جديد"},
+ {id:"cinn",c:"معجنات",e:"🌀",bg:"#f3c9b5",n:"رول القرفة",d:"طري مع صوص الكريمة والقرفة.",p:14},
+ {id:"date",c:"حلويات",e:"🍪",bg:"#e6cfae",n:"كوكيز التمر والشوفان",d:"حلاوة التمر مع قرمشة الشوفان.",p:8},
+ {id:"cake",c:"حلويات",e:"🍰",bg:"#f9e7a6",n:"كيكة الليمون",d:"منعشة وخفيفة بطبقة جلايز ليمون.",p:16}
+];
+const cart={};let cat="الكل";const $=s=>document.querySelector(s);
+const cats=["الكل",...new Set(P.map(x=>x.c))];
+function tabs(){$("#tabs").innerHTML=cats.map(c=>`<button class="${c==cat?"on":""}" data-c="${c}">${c}</button>`).join("")}
+function products(){
+  $("#products").innerHTML=P.filter(x=>cat=="الكل"||x.c==cat).map(x=>`<div class="card"><div class="pic" style="background:${x.bg}">${x.e}${x.t?`<b>${x.t}</b>`:""}</div><div class="bd"><h3>${x.n}</h3><p>${x.d}</p>
+  <div class="row"><span class="price">${x.p} ر.س</span><span class="qty"><button class="m" type="button" data-id="${x.id}" data-d="-1">−</button><b id="q-${x.id}">${cart[x.id]||0}</b><button type="button" data-id="${x.id}" data-d="1">+</button></span></div></div></div>`).join("");
+}
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;cat=b.dataset.c;tabs();products()};
+$("#products").onclick=e=>{
+  const b=e.target.closest("button");if(!b)return;
+  const id=b.dataset.id;cart[id]=Math.max(0,(cart[id]||0)+ +b.dataset.d);
+  $("#q-"+id).textContent=cart[id];summary();
+};
+const lines=()=>P.filter(x=>cart[x.id]).map(x=>`${cart[x.id]} × ${x.n} = ${cart[x.id]*x.p} ر.س`);
+const total=()=>P.reduce((s,x)=>s+(cart[x.id]||0)*x.p,0);
+const count=()=>P.reduce((s,x)=>s+(cart[x.id]||0),0);
+function summary(){
+  const l=lines();
+  $("#summary").textContent=l.length?l.join("\n")+"\nالإجمالي: "+total()+" ر.س":"اختر منتجات من القائمة لتظهر هنا.";
+  $("#bc").textContent=count();$("#bt").textContent=total()+" ر.س";$("#bar").classList.toggle("on",count()>0);
+}
+$("#f").addEventListener("submit",e=>{
+  e.preventDefault();
+  const l=lines();const m=$("#msg");m.style.display="block";
+  if(!l.length){m.textContent="أضف منتجاً واحداً على الأقل من القائمة.";return}
+  const fd=new FormData(e.target);
+  const text=`طلب مسبق من ${fd.get("name")} (${fd.get("phone")})\nالاستلام: ${fd.get("date")}\n${l.join("\n")}\nالإجمالي: ${total()} ر.س${fd.get("notes")?"\nملاحظات: "+fd.get("notes"):""}`;
+  m.innerHTML="";
+  const pre=document.createElement("div");pre.textContent="🎉 جاهز! انسخ الطلب وأرسله لنا لتأكيده:\n\n"+text;
+  const c=document.createElement("button");c.className="btn";c.type="button";c.style.marginTop="14px";c.textContent="نسخ الطلب";
+  c.onclick=async()=>{try{await navigator.clipboard.writeText(text);c.textContent="تم النسخ ✓"}catch(_){c.textContent="حدّد النص وانسخه يدوياً"}};
+  m.append(pre,c);m.scrollIntoView({behavior:"smooth",block:"center"});
+});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+tabs();products();
+</script>
+</body>
+</html>
